@@ -1,0 +1,22 @@
+head
+  link(rel="stylesheet",type="text/css",href="/style.css")
+
+block content
+  a(href="/")
+    h1.home home
+  .navbar
+    .navbar-links
+      if(!currentUser)
+        a(href="/login")
+          li.nav-item Login
+        a(href="/signup")
+          li.nav-item Signup
+      else
+        a(href="/my-books")
+          li.nav-item My Books
+        a(href="/my-requests")
+          li.nav-item My Requests
+        a(href="/profile")
+          li.nav-item Profile
+        a(href="/logout")
+          li.nav-item |  Logout

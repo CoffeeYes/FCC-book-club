@@ -1,0 +1,10 @@
+include ../includes/header.pug
+
+.form-container
+  form.login-form(action="/login",method="post")
+    p.error=error
+    label  Username
+    input(name="user")
+    label Password
+    input(name="pass",type="password")
+    button Login

@@ -1,0 +1,16 @@
+include ../includes/header.pug
+
+.book-request-container
+  each item in book_requests
+    .book-request
+      p=item.user + " has requested " + item.book_title
+      form.book-req-form(action="/book-req-accept",method="post")
+        input.hidden(name="user",value=item.user)
+        input.hidden(name="title",value=item.book_title)
+        button(name="option",value="accept") accept
+        button(name="option",value="decline") decline
+
+.accepted-requests
+  h1 accepted requests
+  each item in accepted_books
+    p=item.user + " has accepted your request for : " + item.book

@@ -1,0 +1,14 @@
+include ../includes/header.pug
+
+.form-container
+  form.signup-form(action="/signup",method="post")
+    p.error=error
+    Label Username
+    Input(name="user")
+    Label Email
+    Input(name="email")
+    Label Password
+    Input(name="pass1",type="password")
+    Label Confirm Password
+    Input(name="pass2",type="password")
+    Button Signup
