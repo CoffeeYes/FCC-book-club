@@ -1,0 +1,15 @@
+html
+  include ../includes/header.pug
+  body
+    block content
+      p.error=error
+      if(book_arr)
+        .book-container
+          each book in book_arr
+            .book
+              p=book.title
+              img(src=book.thumb)
+              if(currentUser)
+                form.req-trade(action="req-trade",method="post")
+                  button(name="book_title",value=book.title) request
+                  input.req-trade-user(name="user",value=book.user)

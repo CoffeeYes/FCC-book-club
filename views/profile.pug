@@ -1,0 +1,12 @@
+include ../includes/header.pug
+
+p.error=error
+.center-container
+  form.update-profile(action="/update-profile",method="post")
+    label Full Name
+      input(name="full_name")
+    label City
+      input(name="city")
+    label State
+      input(name="state")
+    button Submit

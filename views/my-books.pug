@@ -1,0 +1,18 @@
+include ../includes/header.pug
+
+if(!currentUser)
+  h1 You must be logged in to view this page
+else
+  form.add-book(action="/add-book",method="post")
+    p.error=error
+    Label Book Title
+      Input(name="book_title")
+      Button Add
+  if(book_arr)
+    .book-container
+      each item in book_arr
+        .book
+          p.book-title=item.title
+          img.book-image(src=item.thumb)
+          form.del-book(action="delete-book",method="post")
+            button(name="book_title",value=item.title) X
